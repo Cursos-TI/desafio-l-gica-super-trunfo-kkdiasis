@@ -221,9 +221,12 @@ void batalha(struct Carta *c1, struct Carta *c2)
             break;
     }
 
-    printf("\n\tCARTA #1 - %s - %s e %s: %.2f\n",c1->cidade, atributo, atributo2, carta1);
-    printf("\tCARTA #1 - %s - TOTAL: %.2f\n",c1->cidade, (carta1 + carta1_2));
-    printf("\tCARTA #2 - %s - %s e %s: %.2f\n", c2->cidade, atributo, atributo2, carta2);
+    printf("\n\n\tCARTA #1 - %s - %s: %.2f\n",c1->cidade, atributo, carta1);
+    printf("\tCARTA #1 - %s - %s: %.2f\n",c1->cidade, atributo2, carta1);
+    printf("\tCARTA #1 - %s - TOTAL: %.2f\n\n",c1->cidade, (carta1 + carta1_2));
+    
+    printf("\tCARTA #2 - %s - %s: %.2f\n",c2->cidade, atributo, carta2);
+    printf("\tCARTA #2 - %s - %s: %.2f\n",c2->cidade, atributo2, carta2);
     printf("\tCARTA #2 - %s - TOTAL: %.2f\n\n",c2->cidade, (carta2 + carta2_2));
 
     ((carta1 + carta1_2) > (carta2 + carta2_2))?
