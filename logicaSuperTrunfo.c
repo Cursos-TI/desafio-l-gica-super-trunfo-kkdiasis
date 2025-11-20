@@ -97,9 +97,10 @@ float superPoder(
 void batalha(struct Carta *c1, struct Carta *c2)
 {
     int menu = 0;
-    
-    printf("\n\t\t==== COMPARACAO DE CARTAS ====\n\n");
-    printf("\tEscolha qual atributo será usado para essa jogada:\n");
+    char atributo[50];
+
+    printf("\n\t\t==== SUPER TRUNFO - BATALHA DE CARTAS ====\n\n");
+    printf("\tEscolha qual atributo sera usado para essa jogada:\n");
     printf("\t1 - Populacao\n");
     printf("\t2 - Area\n");
     printf("\t3 - PIB\n");
@@ -107,6 +108,7 @@ void batalha(struct Carta *c1, struct Carta *c2)
     printf("\t5 - Densidade populacional\n");
     printf("\t6 - PIB per Capta\n");
     printf("\t7 - Super Poder\n");
+    printf("\t-> Digite o numero da opcao desejada: ");
 
     scanf("%d", &menu);
 
@@ -116,48 +118,60 @@ void batalha(struct Carta *c1, struct Carta *c2)
     switch(menu)
     {
         case 1:
+            strcpy(atributo, "Populacao");
             carta1 = c1->populacao;
             carta2 = c2->populacao;
             break;
 
         case 2:
+            strcpy(atributo, "Area");
             carta1 = c1->area;
             carta2 = c2->area;
             break;
 
         case 3:
+            strcpy(atributo, "PIB");
             carta1 = c1->pib;
             carta2 = c2->pib;
             break;
 
         case 4:
+            strcpy(atributo, "Pontos Turisticos");
             carta1 = c1->pontos_turisticos;
             carta2 = c2->pontos_turisticos;
             break;
 
         case 5:
+            strcpy(atributo, "Densidade Populacional");
             carta1 = c1->densidadePopulacional;
             carta2 = c2->densidadePopulacional;
             break;
 
         case 6:
+            strcpy(atributo, "PIB per Capta");
             carta1 = c1->pibPerCapta;
             carta2 = c2->pibPerCapta;
             break;
 
         case 7:
+            strcpy(atributo, "Super Poder");
             carta1 = c1->superPoder;
             carta2 = c2->superPoder;
             break;
     }
 
-    printf("\nCARTA #1: %.2f\n", carta1);
-    printf("CARTA #2: %.2f\n\n", carta2);
+    printf("\n\tCARTA #1 - %s - %s: %.2f\n",c1->cidade, atributo, carta1);
+    printf("\tCARTA #2 - %s - %s: %.2f\n\n", c2->cidade, atributo, carta2);
 
-    if (carta1 > carta2)
-        printf("^^^^ !! VITORIA DA CARTA #1 !! ^^^^\n");
-    else
-        printf("^^^^ !! VITORIA DA CARTA #2 !! ^^^^\n");
+    if (carta1 > carta2){
+        printf("\t^^^^ !! VITORIA DA CARTA #1 !! ^^^^\n");
+
+    }else if (carta1 == carta2){
+        printf("\t^^^^ !! EMPATOU !! ^^^^\n");
+    
+    }else{    
+        printf("\t^^^^ !! VITORIA DA CARTA #2 !! ^^^^\n");
+    }
 
 }  
 
